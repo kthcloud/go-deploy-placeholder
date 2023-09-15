@@ -1,6 +1,6 @@
 FROM nginx
+
 COPY / /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx/nginx.conf /etc/nginx/conf.d
-EXPOSE 8080
+COPY nginx/nginx.conf /etc/nginx/templates/default.conf.template
 CMD ["nginx", "-g", "daemon off;"]
